@@ -20,6 +20,58 @@ inline Matrix4x4 rotate(float angle, float x, float y, float z);
 } // namespace
 
 void
+makeRobots()
+{
+	g_camera = new Camera;
+	g_scene = new Scene;
+	g_image = new Image;
+
+	g_image->resize(512, 512);
+
+	// set up the camera
+	g_camera->setBGColor(Vector3(0.0f, 0.0f, 0.2f));
+	g_camera->setEye(Vector3(0, 5, 15));
+	g_camera->setLookAt(Vector3(0, 0, 0));
+	g_camera->setUp(Vector3(0, 1, 0));
+	g_camera->setFOV(45);
+
+	// create and place a point light source
+	PointLight * light = new PointLight;
+	light->setPosition(Vector3(10, 100, 10));
+	light->setColor(Vector3(1, 1, 1));
+	light->setWattage(50000);
+	g_scene->addLight(light);
+
+	Material* material = new Lambert(Vector3(1.0f));
+	TriangleMesh * robot1 = new TriangleMesh;
+	robot1->load("player_idle.obj");
+	addMeshTrianglesToScene(robot1, material);
+
+	TriangleMesh * robot2 = new TriangleMesh;
+	robot2->load("player_run.obj");
+	addMeshTrianglesToScene(robot2, material);
+
+	// create the floor triangle
+	TriangleMesh * floor = new TriangleMesh;
+	floor->createSingleTriangle();
+	floor->setV1(Vector3(-100, -1, -100));
+	floor->setV2(Vector3(0, -1, 100));
+	floor->setV3(Vector3(100, -1, -100));
+	floor->setN1(Vector3(0, 1, 0));
+	floor->setN2(Vector3(0, 1, 0));
+	floor->setN3(Vector3(0, 1, 0));
+
+	Triangle* t = new Triangle;
+	t->setIndex(0);
+	t->setMesh(floor);
+	t->setMaterial(material);
+	g_scene->addObject(t);
+
+	// let objects do pre-calculations if needed
+	g_scene->preCalc();
+}
+
+void
 makeMonsterScene()
 {
 	g_camera = new Camera;

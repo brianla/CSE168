@@ -201,8 +201,10 @@ main(int argc, char*argv[])
 	//makeTeapot1Scene();
 	//makeBunny20Scene();
 	//makeBunny1Scene();
-	makeMonsterScene();
 	//makeSponzaScene();
+
+	//makeMonsterScene();
+	makeRobots();
 
     MiroWindow miro(&argc, argv);
     miro.mainLoop();

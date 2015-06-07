@@ -118,7 +118,7 @@ Triangle::intersect(HitInfo& result, const Ray& r,float tMin, float tMax)
 		result.N.normalize();
 		result.material = this->m_material;
 
-		if (m_mesh->triToTex().size() == 0) {
+		if (m_mesh->texImage().size() == 0) {
 			result.T = NULL;
 		}
 		else {
