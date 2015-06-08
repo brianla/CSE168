@@ -37,9 +37,9 @@ makeRobots()
 
 	// create and place a point light source
 	PointLight * light = new PointLight;
-	light->setPosition(Vector3(10, 30, 50));
+	light->setPosition(Vector3(10, 5, 20));
 	light->setColor(Vector3(1, 1, 1));
-	light->setWattage(10000);
+	light->setWattage(2000);
 	g_scene->addLight(light);
 
 	Material* material = new Lambert(Vector3(1.0f));
@@ -55,6 +55,10 @@ makeRobots()
 	bomb->load("bomb.obj");
 	addMeshTrianglesToScene(bomb, material);
 
+	TriangleMesh * room = new TriangleMesh;
+	room->load("room.obj");
+	addMeshTrianglesToScene(room, material);
+
 	// create the floor triangle
 	TriangleMesh * floor = new TriangleMesh;
 	floor->createSingleTriangle();
@@ -69,7 +73,7 @@ makeRobots()
 	t->setIndex(0);
 	t->setMesh(floor);
 	t->setMaterial(material);
-	g_scene->addObject(t);
+	//g_scene->addObject(t);			// FLOOR
 
 	// let objects do pre-calculations if needed
 	g_scene->preCalc();
