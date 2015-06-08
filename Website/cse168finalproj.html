@@ -1,23 +1,23 @@
-<h2>Welcome to the HTML editor!</h2>
-<p>Just type the HTML and it will be shown below.</p>
+<!DOCTYPE html>
+<html>
+<body>
+	<center>
+	<h1>CSE 168 2015 Final Project</h1>
+	<h2>By Brian La and Jonathan Lin</h2>
+	</center>
 
-<a href="http://www.onlinehtmleditor.net/">Editor</a>
+	<p>Just type the HTML and it will be shown below.</p>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum neque id magna. Mauris sollicitudin nisi sit amet sem. Etiam sit amet lectus a velit interdum facilisis. Vestibulum ante ipsum primis in faucibus orci <strong>luctus et ultrices posuere</strong> cubilia Curae; In tincidunt eleifend neque. Maecenas interdum, neque in fringilla pellentesque, lacus massa eleifend elit, nec scelerisque nulla orci a nunc. Quisque sollicitudin. Sed pulvinar lacus id lacus. Vestibulum imperdiet tellus eget risus. Quisque libero nisl, feugiat eu, euismod at, elementum eget, tellus. <a href="http://www.clesto.com">Clesto.com</a></p>
+	<p>Our original proposal of the project was a simple scene that compliments photon mapping, such as using the cornell box as the rendered scene. In addition to the photon mapping, having caustics would make the scene look more realistic.</p>
 
-<img src="http://www.google.se/images/google_80wht.gif" alt="Google logo">
+	<img src="cornell1.jpg">
 
-<h2>Heading in h2, som more sample text</h2>
+	<p>[Brian] For this project I was more focused on creating a nice scene that we can use to demonstrate our features, a scene other than the ones that are given to us from the class website. Originally, I wanted to reuse a model of a monster that I had used for CSE 167. This required implementing texture mapping using the Miro base code. Unlike relying on OpenGL function calls that I used for my CSE 167 project, I had to create my own structures and functions for storing/using the texture images. This is because objects that have textures will be using those texture color as their diffuse component. And so, after successfully importing a model with its texture images, we have this:</p>
 
-<p>Phasellus sem odio, varius quis, cursus at, ullamcorper eget, turpis. Maecenas a mi. Mauris dignissim lectus malesuada odio. Duis elit arcu, lobortis ut, porta ac, venenatis ornare, odio. Pellentesque scelerisque. Ut elementum laoreet massa. Suspendisse hendrerit odio eget turpis. Cras tellus dui, malesuada id, adipiscing ut, laoreet sed, magna. Phasellus scelerisque aliquet ligula. Quisque vitae elit sit amet enim suscipit interdum. Curabitur laoreet, mauris sit amet aliquet interdum, pede sapien malesuada metus, in tincidunt turpis justo id arcu. Donec gravida odio ac lectus. Nam rutrum ante in nisi laoreet aliquet. Sed at ante.</p>
+	<img src="tex1.jpg">
 
-<h3>Heading in h3, som more sample text</h3>
+	<p> After seeing the result, I felt the scene felt lacking - there's not much going on. Since I am taking CSE 125 this quarter and my CSE 125 team recently finished our game, I was thinking of taking those models used in the game and recreate a scene from it, as if it was a "screenshot." As shown here, we have a (red) player throwing a bomb at another (blue) player (Note: only the robot models have textures):</p>
 
-<p>Nulla facilisi. Nullam cursus scelerisque erat. Praesent convallis rhoncus dui. In hac habitasse platea dictumst. Nullam pellentesque. Mauris ac orci. Donec dictum. Etiam purus tortor, elementum a, posuere nec, pulvinar id, ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque vel justo. Nullam posuere purus sed arcu.</p>
-
-<ul>
-	<li>Nulla facilisi.</li>
-	<li>Pellentesque habitant morbi</li>
-	<li>Quisque vel justo.</li>
-	<li>Nullam posuere purus sed arcu.</li>
-</ul>
+	<img src="tex1.PNG">
+</body>
+</html>
